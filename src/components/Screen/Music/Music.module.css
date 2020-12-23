@@ -1,0 +1,36 @@
+.Music{
+    height:100%;
+    width:100%;
+    background-color: white;
+    overflow: hidden;
+    z-index:40;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: top;
+    font-size:18px;
+   
+}
+.Music >div{
+    padding:5px 35px;
+    flex-grow: 1;
+    box-sizing: border-box;
+    width:100%;
+    letter-spacing: 1.5px;
+    border-bottom: 2px solid rgb(209, 209, 209);
+}
+.Title{
+    text-align: center;
+    font-weight: bold;
+    color:white;
+    background-color: #fc4545;
+    font-size:24px !important;
+}
+.Controls{
+
+    text-align: center;
+    color:white;
+    background-color: #fc4545;
+    border-bottom: 0;
+    font-size:22px !important;
+}

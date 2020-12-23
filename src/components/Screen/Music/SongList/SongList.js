@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './MenuItems.module.css';
+import classes from './SongList.module.css';
 import Aux from '../../../../hoc/Auxiliary/Auxiliary'
-const MenuItems = (props) => {
+const SongList = (props) => {
     return(
         <Aux >
             <div>Home</div>
@@ -9,7 +9,8 @@ const MenuItems = (props) => {
             <div>Music</div>
             <div>Settings</div>
             <div>CoverFlow</div>    
+            <div>CoverFlow</div>  
         </Aux>
     );
 }
-export default MenuItems;
+export default SongList;

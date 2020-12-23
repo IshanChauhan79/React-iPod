@@ -1,0 +1,18 @@
+.Display{
+    z-index: 30;
+    background-color: white;
+    opacity:0.9;
+    text-align: center;
+    height:100%;
+    width:100%;
+    font-size:35px;
+    font-weight: 600;
+    /* box-sizing: border-box; */
+}
+.Title{
+    padding:20px;
+}
+.Image{
+    height:100px;
+    width: 100px;
+}
