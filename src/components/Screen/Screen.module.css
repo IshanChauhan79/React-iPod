@@ -1,0 +1,12 @@
+.Screen{
+    z-index:20;
+    height:300px;
+    position: relative;
+    width:95%;
+    /* border:1px solid lightgrey; */
+    background-position:top ;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 16px;
+}

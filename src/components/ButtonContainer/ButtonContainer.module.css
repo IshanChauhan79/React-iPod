@@ -1,0 +1,10 @@
+.ButtonContainer{
+    z-index:20;
+    height:250px;
+    width:95%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}

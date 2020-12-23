@@ -1,0 +1,23 @@
+.IPod{
+    position:relative;
+    margin:auto;
+    top:20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    height:600px;
+    width:350px;
+
+    border-radius: 16px;
+    overflow: hidden;
+    z-index: 10;
+    box-shadow: 0px 0px 12px 6px #888888
+}
+.Cover{
+    width:auto;
+    height:auto;
+    max-width: 350px;
+    position:absolute;
+
+  }

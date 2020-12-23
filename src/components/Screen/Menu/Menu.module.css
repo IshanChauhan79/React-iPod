@@ -1,0 +1,37 @@
+.Menu{
+    height:100%;
+    width:50%;
+    background-color: white;
+    position: absolute;
+    left:0;
+    overflow: hidden;
+    z-index:40;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: top;
+    font-size:22px;
+    display: none;
+   
+}
+.Title{
+    text-align: center;
+    font-weight: bold;
+    color:white;
+    background-color: #fc4545;
+    font-size:20px !important;
+}
+.Menu >div{
+    padding:10px 25px;
+    flex-grow: 1;
+    box-sizing: border-box;
+    width:100%;
+    letter-spacing: 1.5px;
+    border-bottom: 2px solid rgb(209, 209, 209);
+}
+.Open{
+    transform: translateX(0);
+}
+.Close{
+    transform: translateX(-100%);
+}

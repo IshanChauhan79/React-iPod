@@ -1,0 +1,13 @@
+.TopButton{
+    position: absolute;
+    top: 5px;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 30px !important;
+    height:60px;
+    width:60px;
+    color: rgb(90, 90, 90);
+    outline: transparent;
+    border:0;
+
+}
