@@ -11,7 +11,7 @@ const Buttons =(props)=>{
     return(
         <div className={classes.Buttons}>
             <CenterButton />
-            <TopButton />
+            <TopButton menuClicked={props.menuClicked} />
             <LeftButton />
             <RightButton />
             <BottomButton />

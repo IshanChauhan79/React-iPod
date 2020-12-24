@@ -6,9 +6,19 @@ import ScreenContent from './ScreenContent/ScreenContent';
 import Music from './Music/Music';
  
 const Screen =(props)=>{
+
     return(
-        <div className={classes.Screen} style={{"backgroundImage":"url("+home+")"}}>
-            {/* <Menu /> */}
+        <div className={classes.Screen} 
+            style={{
+                "backgroundImage":"url("+home+")",   
+                
+            }
+        }>
+            
+            <Menu     
+                showMenu={props.showMenu}
+                menu={props.menu}
+            />
             {/* <ScreenContent /> */}
             {/* <Music /> */}
         </div>
