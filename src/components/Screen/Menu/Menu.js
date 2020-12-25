@@ -9,10 +9,12 @@ const Menu = (props) => {
                 opacity:props.showMenu?'1':'0'
             }}
             >
-            <div className={classes.Title}>React iPod</div>
+            <div className={classes.Title}>React iPod </div>
             <MenuItems 
                 menu={props.menu}
+                selectedMenu={props.selectedMenu}
             />
+            
         </div>
     );
 }

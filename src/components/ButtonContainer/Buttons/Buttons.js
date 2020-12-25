@@ -9,7 +9,7 @@ import BottomButton from './BottomButton/BottomButton';
  
 const Buttons =(props)=>{
     return(
-        <div className={classes.Buttons}>
+        <div  id='Buttons' className={classes.Buttons}>
             <CenterButton />
             <TopButton menuClicked={props.menuClicked} />
             <LeftButton />

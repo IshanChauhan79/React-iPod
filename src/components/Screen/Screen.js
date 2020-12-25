@@ -7,6 +7,7 @@ import Music from './Music/Music';
  
 const Screen =(props)=>{
 
+
     return(
         <div className={classes.Screen} 
             style={{
@@ -18,6 +19,7 @@ const Screen =(props)=>{
             <Menu     
                 showMenu={props.showMenu}
                 menu={props.menu}
+                selectedMenu={props.selectedMenu}
             />
             {/* <ScreenContent /> */}
             {/* <Music /> */}
