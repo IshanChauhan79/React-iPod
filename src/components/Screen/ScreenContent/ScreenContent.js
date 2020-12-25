@@ -5,8 +5,27 @@ import gallary from '../../../assets/images/gallary.jpg';
 import setting from '../../../assets/images/setting.webp'
 
 const ScreenContent = (props) =>{
+    let screenTitle = props.menu[props.openSelectedMenu] ;
+    let image ='';
+    let display=null;
+    if (props.openSelectedMenu ===1)
+        image=games;
+    else if(props.openSelectedMenu ===3){
+        image=setting;
+    }
+    else if(props.openSelectedMenu ===4){
+        image=gallary
+    }
+    // if (openSelectedMenu===1 || openSelectedMenu===3 || openSelectedMenu===4){
+        
+    // }
     return(
-        <Display image={setting} title="Games" />
+        // props.
+        <Display 
+            openSelectedMenu={props.openSelectedMenu}
+            image={image} 
+            title={screenTitle}
+        />
     );
 }
 export default ScreenContent;

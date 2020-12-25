@@ -10,7 +10,7 @@ import BottomButton from './BottomButton/BottomButton';
 const Buttons =(props)=>{
     return(
         <div  id='Buttons' className={classes.Buttons}>
-            <CenterButton />
+            <CenterButton selectClicked={props.selectClicked} />
             <TopButton menuClicked={props.menuClicked} />
             <LeftButton />
             <RightButton />

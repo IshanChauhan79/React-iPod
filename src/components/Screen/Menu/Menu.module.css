@@ -24,11 +24,10 @@
     font-size:20px !important;
 }
 .Menu >div{
-    padding:10px 25px;
+    padding:10px 20px;
     flex-grow: 1;
     box-sizing: border-box;
     width:100%;
-    letter-spacing: 1.5px;
     border-bottom: 2px solid rgb(209, 209, 209);
 }
 .Open{

@@ -5,7 +5,10 @@ import Buttons from './Buttons/Buttons.js'
 const ButtonContainer =(props)=>{
     return(
         <div className={classes.ButtonContainer}>
-            <Buttons menuClicked={props.menuClicked} />
+            <Buttons 
+                menuClicked={props.menuClicked}
+                selectClicked={props.selectButtonClicked}    
+            />
         </div>
     )
 }

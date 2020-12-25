@@ -9,7 +9,11 @@ class IPod extends Component{
     state={
         menu:['Home','Games','Music','Setting','CoverFlow'],
         showMenu:false,
-        selectedMenu:0
+        selectedMenu:0,
+        openSelectedMenu:0,
+        musicMenu:["Now Playing","All Songs","Artists","Albums","Go Back"],
+        selectedMusicMenu:0,
+        openSelectedMusicMenu:4
     }
 
 
@@ -20,27 +24,53 @@ class IPod extends Component{
         var angle=0;
         zt.bind(button,'rotate',(event)=>{
             if (this.state.showMenu){
-                var selected=this.state.selectedMenu;
+
                 let dist = event.detail.distanceFromLast;
                 angle=angle+dist;
-                if(angle>60){     
-                    angle=0;
-                    selected+=1;
-                    if(selected>4){
-                        selected=0
-                    }
-                    this.setState({selectedMenu:selected})
-                }
+                var selected=null
                 
-                else if(angle<-60){
-                    angle=0;
-                    selected-=1;
-                    if(selected<0){
-                        selected=4
+                if(this.state.openSelectedMenu!==2){
+                    selected=this.state.selectedMenu;
+
+                    if(angle>60){     
+                        angle=0;
+                        selected+=1;
+                        if(selected>4){
+                            selected=0
+                        }
+                        this.setState({selectedMenu:selected})
+                    }
+                    else if(angle<-60){
+                        angle=0;
+                        selected-=1;
+                        if(selected<0){
+                            selected=4
+                        }
+                        this.setState({selectedMenu:selected})
                     }
 
-                    this.setState({selectedMenu:selected})
+                }else{
+                    selected=this.state.selectedMusicMenu;
+                    if(angle>60){     
+                        angle=0;
+                        selected+=1;
+                        if(selected>4){
+                            selected=0
+                        }
+                        this.setState({selectedMusicMenu:selected})
+                    }
+                    else if(angle<-60){
+                        angle=0;
+                        selected-=1;
+                        if(selected<0){
+                            selected=4
+                        }
+                        this.setState({selectedMusicMenu:selected})
+                    }
+                    
                 }
+                
+                
             }
         })
 
@@ -82,8 +112,6 @@ class IPod extends Component{
     // });
 // }
 
-
-
     
     menuClickedHandler=()=>{
         this.setState(prevState=>(
@@ -93,10 +121,30 @@ class IPod extends Component{
         ));
 
     }
+    selctClickedHandler=()=>{
+        if(this.state.showMenu){
+            if (this.state.selectedMenu!==2){
+                this.setState({
+                    openSelectedMenu:this.state.selectedMenu,
+                    showMenu:false
+                });
+            }else{
+                this.setState({
+                    openSelectedMenu:this.state.selectedMenu,
+                    openSelectedMusicMenu:this.state.selectedMusicMenu
+                });
+
+            }
+            
+            
+        }
+        
+    }
 
 
 
     render(){
+        // console.log(this.state.openSelectedMenu)
         return(
             <div className={classes.IPod}>
                 <img src={cover} className={classes.Cover} alt='' />
@@ -106,10 +154,20 @@ class IPod extends Component{
                     menu={this.state.menu}
                     showMenu={this.state.showMenu}
                     selectedMenu={this.state.selectedMenu}
+                    openSelectedMenu={this.state.openSelectedMenu}
+                    
+                    musicMenu={this.state.musicMenu}                             
+                    selectedMusicMenu={this.state.selectedMusicMenu}
+                    openSelectedMusicMenu={this.openSelectedMusicMenu}
+
+                    
                 />
 
 
-                <ButtonContainer menuClicked={this.menuClickedHandler} />
+                <ButtonContainer 
+                    menuClicked={this.menuClickedHandler}
+                    selectButtonClicked={this.selctClickedHandler}
+                 />
             </div>
         )
     }

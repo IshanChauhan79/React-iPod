@@ -3,8 +3,12 @@ import classes from './CenterButton.module.css';
 
  
 const CenterButton =(props)=>{
+    
     return(
-        <button className={classes.CenterButton}>
+        <button 
+            className={classes.CenterButton}
+            onClick={props.selectClicked}
+        >
             Select
         </button>
     )

@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './MenuItems.module.css';
+// import classes from './MenuItems.module.css';
 import Aux from '../../../../hoc/Auxiliary/Auxiliary'
 const MenuItems = (props) => {
     // const menu=props.menu
@@ -8,7 +8,10 @@ const MenuItems = (props) => {
         return(
             <div 
                 key={i}
-                style={{'backgroundColor':props.selectedMenu===i?'blue':'white'}}
+                style={{
+                    'backgroundColor':props.selectedMenu===i?'blue':'white',
+                    'color':(props.music && i===4)?"red":'black'
+                }}
             >{value}</div>)
     }
         

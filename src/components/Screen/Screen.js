@@ -6,7 +6,11 @@ import ScreenContent from './ScreenContent/ScreenContent';
 import Music from './Music/Music';
  
 const Screen =(props)=>{
-
+    let content = (props.openSelectedMenu !== 0 && props.openSelectedMenu !== 2 )?
+                    <ScreenContent 
+                        openSelectedMenu={props.openSelectedMenu}
+                        menu={props.menu}
+                    />:null;
 
     return(
         <div className={classes.Screen} 
@@ -18,10 +22,17 @@ const Screen =(props)=>{
             
             <Menu     
                 showMenu={props.showMenu}
+
                 menu={props.menu}
                 selectedMenu={props.selectedMenu}
+                openSelectedMenu={props.openSelectedMenu}
+
+                musicMenu={props.musicMenu}                             
+                selectedMusicMenu={props.selectedMusicMenu}
+
             />
-            {/* <ScreenContent /> */}
+            {content}
+            
             {/* <Music /> */}
         </div>
     )

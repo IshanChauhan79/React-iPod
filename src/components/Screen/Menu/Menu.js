@@ -10,10 +10,20 @@ const Menu = (props) => {
             }}
             >
             <div className={classes.Title}>React iPod </div>
-            <MenuItems 
-                menu={props.menu}
-                selectedMenu={props.selectedMenu}
-            />
+            {props.openSelectedMenu!==2?
+                <MenuItems 
+                    menu={props.menu}
+                    selectedMenu={props.selectedMenu}
+                    music={false}
+                />:
+                <MenuItems 
+                    music={true}
+                    menu={props.musicMenu}
+                    selectedMenu={props.selectedMusicMenu}
+                />
+
+            }
+            
             
         </div>
     );
