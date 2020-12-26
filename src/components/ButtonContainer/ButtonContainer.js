@@ -7,7 +7,10 @@ const ButtonContainer =(props)=>{
         <div className={classes.ButtonContainer}>
             <Buttons 
                 menuClicked={props.menuClicked}
-                selectClicked={props.selectButtonClicked}    
+                selectClicked={props.selectButtonClicked}  
+                
+                leftButtonClicked={props.leftButtonClicked}
+                rightButtonClicked={props.rightButtonClicked}
             />
         </div>
     )

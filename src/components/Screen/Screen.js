@@ -3,6 +3,7 @@ import classes from './Screen.module.css';
 import home from '../../assets/images/home.jpg';
 import Menu from './Menu/Menu';
 import ScreenContent from './ScreenContent/ScreenContent';
+import MusicContent from './MusicContent/MusicContent';
 import Music from './Music/Music';
  
 const Screen =(props)=>{
@@ -11,16 +12,21 @@ const Screen =(props)=>{
                         openSelectedMenu={props.openSelectedMenu}
                         menu={props.menu}
                     />:null;
+    let musicContent = (props.openSelectedMenu === 2 && (props.openSelectedMusicMenu !== 1 && props.openSelectedMusicMenu !== 0 && props.openSelectedMusic !== 4 ))?
+                    <MusicContent
+                        openSelectedMusicMenu={props.openSelectedMusicMenu}
+                        musicMenu={props.musicMenu}
+
+                    />:null;
 
     return(
         <div className={classes.Screen} 
             style={{
-                "backgroundImage":"url("+home+")",   
-                
+                "backgroundImage":"url("+home+")"                
             }
         }>
             
-            <Menu     
+            {/* <Menu     
                 showMenu={props.showMenu}
 
                 menu={props.menu}
@@ -29,11 +35,16 @@ const Screen =(props)=>{
 
                 musicMenu={props.musicMenu}                             
                 selectedMusicMenu={props.selectedMusicMenu}
+                
 
             />
             {content}
+            {musicContent} */}
             
-            {/* <Music /> */}
+            <Music
+                nowPlaying={props.nowPlaying}
+                selectedMusic={props.selectedMusic}
+            />
         </div>
     )
 }

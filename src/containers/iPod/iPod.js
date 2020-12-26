@@ -9,11 +9,13 @@ class IPod extends Component{
     state={
         menu:['Home','Games','Music','Setting','CoverFlow'],
         showMenu:false,
-        selectedMenu:0,
+        selectedMenu:2,
         openSelectedMenu:0,
         musicMenu:["Now Playing","All Songs","Artists","Albums","Go Back"],
         selectedMusicMenu:0,
-        openSelectedMusicMenu:4
+        openSelectedMusicMenu:1,
+        nowPlaying:null,
+        selectedMusic:0
     }
 
 
@@ -113,6 +115,7 @@ class IPod extends Component{
 // }
 
     
+
     menuClickedHandler=()=>{
         this.setState(prevState=>(
             {
@@ -121,7 +124,9 @@ class IPod extends Component{
         ));
 
     }
-    selctClickedHandler=()=>{
+
+
+    selectClickedHandler=()=>{
         if(this.state.showMenu){
             if (this.state.selectedMenu!==2){
                 this.setState({
@@ -129,16 +134,54 @@ class IPod extends Component{
                     showMenu:false
                 });
             }else{
-                this.setState({
-                    openSelectedMenu:this.state.selectedMenu,
-                    openSelectedMusicMenu:this.state.selectedMusicMenu
-                });
+                if(this.state.selectedMusicMenu===4){
+                    this.setState({
+                        openSelectedMenu:0,
+                        openSelectedMusicMenu:null,
+                        selectedMusicMenu:0
+                    });
+
+                }
+                else{
+                    this.setState({
+                        openSelectedMenu:this.state.selectedMenu,
+                        openSelectedMusicMenu:this.state.selectedMusicMenu
+                    });
+                }
+                
 
             }
             
             
         }
         
+    }
+
+
+
+    leftButtonHandler=()=>{
+        if ( this.state.selectedMenu === 2 && this.state.openSelectedMusicMenu === 1){
+            let selectedMusic =this.state.selectedMusic;
+            selectedMusic-=1;
+            if(selectedMusic<0){
+                selectedMusic=5;
+            }
+            this.setState({selectedMusic:selectedMusic})
+        }
+
+
+    }
+    rightButtonHandler=()=>{
+        if ( this.state.selectedMenu === 2 && this.state.openSelectedMusicMenu === 1){
+            let selectedMusic =this.state.selectedMusic;
+            selectedMusic+=1;
+            if(selectedMusic>5){
+                selectedMusic=0;
+            }
+            this.setState({selectedMusic:selectedMusic})
+        }
+
+
     }
 
 
@@ -158,15 +201,21 @@ class IPod extends Component{
                     
                     musicMenu={this.state.musicMenu}                             
                     selectedMusicMenu={this.state.selectedMusicMenu}
-                    openSelectedMusicMenu={this.openSelectedMusicMenu}
+                    openSelectedMusicMenu={this.state.openSelectedMusicMenu}
 
+                    nowPlaying={this.state.nowPlaying}
+                    selectedMusic={this.state.selectedMusic}
                     
                 />
 
 
                 <ButtonContainer 
                     menuClicked={this.menuClickedHandler}
-                    selectButtonClicked={this.selctClickedHandler}
+                    selectButtonClicked={this.selectClickedHandler}
+
+                    leftButtonClicked={this.leftButtonHandler}
+                    rightButtonClicked={this.rightButtonHandler}
+
                  />
             </div>
         )

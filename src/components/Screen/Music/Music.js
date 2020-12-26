@@ -5,7 +5,10 @@ const Music = (props) =>{
     return(
         <div className={classes.Music}>
             <div className={classes.Title}>All Songs</div>
-            <SongList />
+            <SongList
+                nowPlaying={props.nowPlaying}
+                selectedMusic={props.selectedMusic}
+            />
             <div className={classes.Controls}>controls</div>
         </div>
     );

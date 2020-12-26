@@ -2,7 +2,7 @@ import React from 'react';
 import Display from  '../../UI/Display/Display';
 import games from '../../../assets/images/games.jpg';
 import gallary from '../../../assets/images/gallary.jpg';
-import setting from '../../../assets/images/setting.webp'
+import setting from '../../../assets/images/setting.png'
 
 const ScreenContent = (props) =>{
     let screenTitle = props.menu[props.openSelectedMenu] ;

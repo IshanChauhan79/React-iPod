@@ -12,9 +12,11 @@ const Buttons =(props)=>{
         <div  id='Buttons' className={classes.Buttons}>
             <CenterButton selectClicked={props.selectClicked} />
             <TopButton menuClicked={props.menuClicked} />
-            <LeftButton />
-            <RightButton />
+            <LeftButton leftButtonClicked={props.leftButtonClicked} />
+            <RightButton rightButtonClicked={props.rightButtonClicked}  />
             <BottomButton />
+            
+            
             
             
         </div>
