@@ -13,7 +13,7 @@ class IPod extends Component{
         openSelectedMenu:0,
         musicMenu:["Now Playing","All Songs","Artists","Albums","Go Back"],
         selectedMusicMenu:0,
-        openSelectedMusicMenu:1,
+        openSelectedMusicMenu:10,
         nowPlaying:null,
         selectedMusic:0
     }
@@ -134,18 +134,27 @@ class IPod extends Component{
                     showMenu:false
                 });
             }else{
+                // if(this)
+                
                 if(this.state.selectedMusicMenu===4){
                     this.setState({
                         openSelectedMenu:0,
-                        openSelectedMusicMenu:null,
+                        openSelectedMusicMenu:10,
                         selectedMusicMenu:0
                     });
 
                 }
+                
                 else{
                     this.setState({
                         openSelectedMenu:this.state.selectedMenu,
-                        openSelectedMusicMenu:this.state.selectedMusicMenu
+                        openSelectedMusicMenu:this.state.selectedMusicMenu,
+                        showMenu:false
+                    });
+                }
+                if(this.state.selectedMenu===2 && this.state.openSelectedMusicMenu === 10) {
+                    this.setState({
+                        showMenu:true
                     });
                 }
                 

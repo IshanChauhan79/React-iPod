@@ -5,16 +5,19 @@ import Aux from '../../../../hoc/Auxiliary/Auxiliary'
 const SongList = (props) => {
     // nowPlaying={props.nowPlaying}
     // selectedMusic={props.selectedMusic}
-    let menu=["a",'b','c','d','e','f']
 
-    const list = menu.map((value,i)=>{
+    const list = props.songList.map((value,i)=>{
         return(
             <div 
                 key={i}
                 style={{
-                    'backgroundColor':props.selectedMusic===i?'blue':'white'
+                    'backgroundColor':props.selectedMusic===i?'blue':'white',
+                    'color':(props.selectedMusic===i)?"white":'black',
+                    'padding':(props.selectedMusic===i)?"5px 0px":"5px 35px"
                 }}
-            >{value}</div>)
+            >
+                {(props.selectedMusic===i)?<marquee>{value}</marquee>:value}
+                </div>)
     });
 
     return(

@@ -12,7 +12,10 @@
    
 }
 .Music >div{
+
     padding:5px 35px;
+    white-space:nowrap;
+    overflow: hidden;
     flex-grow: 1;
     box-sizing: border-box;
     width:100%;

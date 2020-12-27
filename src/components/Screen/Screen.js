@@ -7,16 +7,33 @@ import MusicContent from './MusicContent/MusicContent';
 import Music from './Music/Music';
  
 const Screen =(props)=>{
-    let content = (props.openSelectedMenu !== 0 && props.openSelectedMenu !== 2 )?
+    const content = (props.openSelectedMenu !== 0 && props.openSelectedMenu !== 2 )?
                     <ScreenContent 
                         openSelectedMenu={props.openSelectedMenu}
                         menu={props.menu}
                     />:null;
-    let musicContent = (props.openSelectedMenu === 2 && (props.openSelectedMusicMenu !== 1 && props.openSelectedMusicMenu !== 0 && props.openSelectedMusic !== 4 ))?
+    
+    const musicContent = (props.openSelectedMenu === 2 && (props.openSelectedMusicMenu !== 1 && props.openSelectedMusicMenu !== 0 && props.openSelectedMusic !== 4 ))?
                     <MusicContent
                         openSelectedMusicMenu={props.openSelectedMusicMenu}
                         musicMenu={props.musicMenu}
 
+                    />:null;
+
+
+    const songList= [
+                        'Udd Gaye by Ritviz',
+                        'Naruto OP16',
+                        'Sugar Song by USG',
+                        'Naruto Op17',
+                        'Kataomoi by Aimer',
+                        'Daisey BTB'
+                    ];
+    const displaySongs= (props.openSelectedMenu ===2 && props.openSelectedMusicMenu === 1)?
+                    <Music
+                        list={songList}
+                        nowPlaying={props.nowPlaying}
+                        selectedMusic={props.selectedMusic}
                     />:null;
 
     return(
@@ -26,7 +43,7 @@ const Screen =(props)=>{
             }
         }>
             
-            {/* <Menu     
+            <Menu     
                 showMenu={props.showMenu}
 
                 menu={props.menu}
@@ -39,12 +56,10 @@ const Screen =(props)=>{
 
             />
             {content}
-            {musicContent} */}
+            {musicContent}
+            {displaySongs}
+
             
-            <Music
-                nowPlaying={props.nowPlaying}
-                selectedMusic={props.selectedMusic}
-            />
         </div>
     )
 }

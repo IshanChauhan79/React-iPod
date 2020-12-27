@@ -6,6 +6,7 @@ const Music = (props) =>{
         <div className={classes.Music}>
             <div className={classes.Title}>All Songs</div>
             <SongList
+                songList={props.list}
                 nowPlaying={props.nowPlaying}
                 selectedMusic={props.selectedMusic}
             />
