@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Music.module.css'
 import SongList from './SongList/SongList';
+// componet for diplaying song list on screen
 const Music = (props) =>{
     return(
         <div className={classes.Music}>

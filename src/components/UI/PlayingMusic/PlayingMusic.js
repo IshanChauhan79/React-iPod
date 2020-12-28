@@ -11,7 +11,6 @@ const PlayingMusic = (props) => {
     else{
         cssprop.push(classes.top100)
     }
-    // document.getElementById('audio').play();
     
 
     return (

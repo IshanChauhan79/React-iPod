@@ -60,19 +60,15 @@ const NowPlaying =(props) => {
     }
     
 
-
+//display and play the music according to the selected music
     return(
         <PlayingMusic
+        //passing the props the UI component which conatians a fixed structure and css styles 
         song={song}
         title={title}
         image={image}
-
         showPlaying={props.showPlaying} />
         
     )
 }
 export default NowPlaying;
-// nowPlaying={props.nowPlaying}
-// selectedMusic={props.selectedMusic}
-// playing={props.playing}
-// songList={props.songList}

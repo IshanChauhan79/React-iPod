@@ -7,7 +7,7 @@ import setting from '../../../assets/images/setting.png'
 const ScreenContent = (props) =>{
     let screenTitle = props.menu[props.openSelectedMenu] ;
     let image ='';
-    let display=null;
+
     if (props.openSelectedMenu ===1)
         image=games;
     else if(props.openSelectedMenu ===3){

@@ -4,9 +4,7 @@ import artist from '../../../assets/images/artist.png';
 import album from '../../../assets/images/album.png';
 
 
-
-
-
+//return the componet to be displayed on screen after being selct from default menu
 
 const ScreenContent = (props) =>{
     let screenTitle = props.musicMenu[props.openSelectedMusicMenu] ;
@@ -21,6 +19,7 @@ const ScreenContent = (props) =>{
     return(
 
         <Display 
+            //passing the props the UI component which conatians a fixed structure and css styles 
             openSelectedMusicMenu={props.openSelectedMusicMenu}
             image={image} 
             title={screenTitle}

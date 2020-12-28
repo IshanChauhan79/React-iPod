@@ -1,10 +1,8 @@
 import React from 'react';
-// import classes from './SongList.module.css';
 import Aux from '../../../../hoc/Auxiliary/Auxiliary'
 
+//return the list of songs
 const SongList = (props) => {
-    // nowPlaying={props.nowPlaying}
-    // selectedMusic={props.selectedMusic}
 
     const list = props.songList.map((value,i)=>{
         return(

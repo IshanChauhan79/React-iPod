@@ -6,6 +6,7 @@ import LeftButton from './LeftButton/LeftButton';
 import RightButton from './RightButton/RightButton';
 import BottomButton from './BottomButton/BottomButton';
 
+ // display all the buttons containing their respective onClick event listeners
  
 const Buttons =(props)=>{
     return(
