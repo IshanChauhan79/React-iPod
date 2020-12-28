@@ -5,7 +5,8 @@ import Menu from './Menu/Menu';
 import ScreenContent from './ScreenContent/ScreenContent';
 import MusicContent from './MusicContent/MusicContent';
 import Music from './Music/Music';
- 
+import NowPlaying from './NowPlaying/NowPlaying';
+
 const Screen =(props)=>{
     const content = (props.openSelectedMenu !== 0 && props.openSelectedMenu !== 2 )?
                     <ScreenContent 
@@ -29,12 +30,31 @@ const Screen =(props)=>{
                         'Kataomoi by Aimer',
                         'Daisey BTB'
                     ];
-    const displaySongs= (props.openSelectedMenu ===2 && props.openSelectedMusicMenu === 1)?
+    const allSongs= (props.openSelectedMenu ===2 && props.openSelectedMusicMenu === 1)?
                     <Music
                         list={songList}
                         nowPlaying={props.nowPlaying}
                         selectedMusic={props.selectedMusic}
                     />:null;
+
+
+    const playing=((props.showPlaying )?
+                    <NowPlaying
+                    nowPlaying={props.nowPlaying}
+                    selectedMusic={props.selectedMusic}
+                    showPlaying={props.showPlaying}
+                    playing={props.playing}
+                    songList={songList}
+                    />:
+                    <NowPlaying
+                    nowPlaying={props.nowPlaying}
+                    selectedMusic={props.selectedMusic}
+                    showPlaying={props.showPlaying}
+                    playing={props.playing}
+                    songList={songList}/>
+                    
+                    )
+
 
     return(
         <div className={classes.Screen} 
@@ -55,11 +75,14 @@ const Screen =(props)=>{
                 
 
             />
+            {playing}
             {content}
             {musicContent}
-            {displaySongs}
-
+            {allSongs}
             
+            
+
+
         </div>
     )
 }

@@ -13,11 +13,11 @@ const SongList = (props) => {
                 style={{
                     'backgroundColor':props.selectedMusic===i?'blue':'white',
                     'color':(props.selectedMusic===i)?"white":'black',
-                    'padding':(props.selectedMusic===i)?"5px 0px":"5px 35px"
+                    
                 }}
             >
-                {(props.selectedMusic===i)?<marquee>{value}</marquee>:value}
-                </div>)
+                {value}
+            </div>)
     });
 
     return(

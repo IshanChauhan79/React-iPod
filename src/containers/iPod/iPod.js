@@ -7,15 +7,24 @@ import ButtonContainer from  '../../components/ButtonContainer/ButtonContainer';
 
 class IPod extends Component{
     state={
-        menu:['Home','Games','Music','Setting','CoverFlow'],
         showMenu:false,
-        selectedMenu:2,
+
+        menu:['Home','Games','Music','Setting','CoverFlow'],
+        selectedMenu:0,
         openSelectedMenu:0,
+
         musicMenu:["Now Playing","All Songs","Artists","Albums","Go Back"],
-        selectedMusicMenu:0,
+        selectedMusicMenu:10,
         openSelectedMusicMenu:10,
-        nowPlaying:null,
-        selectedMusic:0
+
+        selectedMusic:0,
+        nowPlaying:0,
+        playing:false,
+        showPlaying:false,
+        playpause:false
+        
+        
+
     }
 
 
@@ -76,43 +85,8 @@ class IPod extends Component{
             }
         })
 
+
     }
-
-    // var zt = new ZingTouch.Region(document.getElementsByClassName('buttons-container')[0]);
-    // zt.bind(document.getElementsByClassName('buttons-container')[0], 'rotate', (event) =>
-    // {
-    //     if (document.getElementsByClassName('screen-menu')[0].classList.contains('width-50'))//this rotating facility will only be available when the side bar is shown to the user.
-    //     {
-    //         let dist = event.detail.distanceFromLast;
-    //         this.temp_change_in_angle += dist;
-    //         if (this.temp_change_in_angle > 60)
-    //         {
-    //             this.temp_selected++;
-    //             this.temp_selected = this.temp_selected % this.state.options.length;
-    //             this.setState({
-    //                 selected: this.temp_selected,
-    //                 // song_index: -1
-    //             });
-
-    //             this.temp_change_in_angle = 0;
-    //         }
-    //         else if (this.temp_change_in_angle < -60)
-    //         {
-    //             this.temp_selected--;
-    //             if (this.temp_selected === -1)
-    //                 this.temp_selected = this.state.options.length - 1;
-
-    //             this.temp_selected = this.temp_selected % this.state.options.length;
-    //             this.setState({
-    //                 selected: this.temp_selected,
-    //                 // song_index: -1
-    //             });
-    //             this.temp_change_in_angle = 0;
-    //         }
-    //     }
-
-    // });
-// }
 
     
 
@@ -131,30 +105,45 @@ class IPod extends Component{
             if (this.state.selectedMenu!==2){
                 this.setState({
                     openSelectedMenu:this.state.selectedMenu,
-                    showMenu:false
+                    showMenu:false,
+                    showPlaying:false
                 });
             }else{
-                // if(this)
                 
                 if(this.state.selectedMusicMenu===4){
                     this.setState({
                         openSelectedMenu:0,
                         openSelectedMusicMenu:10,
-                        selectedMusicMenu:0
+                        selectedMusicMenu:10,
+                        showPlaying:false
+                        
                     });
 
                 }
-                
                 else{
                     this.setState({
                         openSelectedMenu:this.state.selectedMenu,
-                        openSelectedMusicMenu:this.state.selectedMusicMenu,
-                        showMenu:false
+                        openSelectedMusicMenu:(this.state.selectedMusicMenu)===10?0:this.state.selectedMusicMenu,
+                        showMenu:false,
+                        showPlaying:false
                     });
+                    if(this.state.selectedMusicMenu===0 ){
+                        this.setState({
+                            showPlaying:true,
+                            playing:true,
+                            playpause:true
+                        },()=>{
+                            document.getElementById('audio').play();
+                        })
+                        
+                    }
+                    
+                
                 }
                 if(this.state.selectedMenu===2 && this.state.openSelectedMusicMenu === 10) {
                     this.setState({
-                        showMenu:true
+                        showMenu:true,
+                        selectedMusicMenu:0
                     });
                 }
                 
@@ -162,6 +151,20 @@ class IPod extends Component{
             }
             
             
+        }
+        else{
+            if(this.state.openSelectedMusicMenu === 1 &&  this.state.openSelectedMenu === 2){
+                
+                this.setState({
+                    nowPlaying:this.state.selectedMusic,
+                    showPlaying:true,
+                    playing:true,
+                    playpause:true
+                },()=>{
+                    document.getElementById('audio').play();
+                })
+ 
+            }
         }
         
     }
@@ -169,28 +172,105 @@ class IPod extends Component{
 
 
     leftButtonHandler=()=>{
-        if ( this.state.selectedMenu === 2 && this.state.openSelectedMusicMenu === 1){
+        let playingMusicIndex=this.state.nowPlaying;
+            playingMusicIndex-=1
+            if(playingMusicIndex<0){
+                playingMusicIndex=5
+            }
+
+        if(this.state.showPlaying){
+            this.setState({
+                nowPlaying:playingMusicIndex,
+                playing:true,
+                selectedMusic:playingMusicIndex
+            },()=>{
+                document.getElementById('audio').play();
+            })
+            return;
+        }
+
+        if(this.state.playing){
+            this.setState({
+                nowPlaying:playingMusicIndex,
+                playing:true,
+                selectedMusic:playingMusicIndex
+            },()=>{
+                document.getElementById('audio').play();
+            })
+            return;
+        }
+
+
+        if ( this.state.selectedMenu === 2 && this.state.openSelectedMusicMenu === 1 && !this.state.showPlaying){
             let selectedMusic =this.state.selectedMusic;
             selectedMusic-=1;
             if(selectedMusic<0){
                 selectedMusic=5;
             }
-            this.setState({selectedMusic:selectedMusic})
+            this.setState({selectedMusic:selectedMusic});
+            return;
+        }
+    }
+
+
+    rightButtonHandler=()=>{
+
+        let playingMusicIndex=this.state.nowPlaying;
+            playingMusicIndex+=1
+            if(playingMusicIndex>5){
+                playingMusicIndex=0
+            }
+
+        if(this.state.showPlaying){
+            this.setState({
+                nowPlaying:playingMusicIndex,
+                playing:true,
+                selectedMusic:playingMusicIndex
+            },()=>{
+                document.getElementById('audio').play();
+            })
+            return;
+        }
+
+        if(this.state.playing){
+            this.setState({
+                nowPlaying:playingMusicIndex,
+                playing:true,
+                selectedMusic:playingMusicIndex
+            },()=>{
+                document.getElementById('audio').play();
+            })
+            return;
         }
 
 
-    }
-    rightButtonHandler=()=>{
-        if ( this.state.selectedMenu === 2 && this.state.openSelectedMusicMenu === 1){
+        if ( this.state.selectedMenu === 2 && this.state.openSelectedMusicMenu === 1 && !this.state.showPlaying){
             let selectedMusic =this.state.selectedMusic;
             selectedMusic+=1;
             if(selectedMusic>5){
                 selectedMusic=0;
             }
-            this.setState({selectedMusic:selectedMusic})
+            this.setState({selectedMusic:selectedMusic});
+            return;
         }
+        
 
 
+    }
+    playPauseHandler=()=>{
+        if(this.state.playpause){
+            if(this.state.playing){
+                document.getElementById('audio').pause();
+                this.setState({playing:false})
+            }else{
+                document.getElementById('audio').play();
+                this.setState({playing:true})
+    
+            }
+
+        }
+        
+        
     }
 
 
@@ -214,6 +294,9 @@ class IPod extends Component{
 
                     nowPlaying={this.state.nowPlaying}
                     selectedMusic={this.state.selectedMusic}
+                    playing={this.state.playing}
+                    showPlaying={this.state.showPlaying}
+
                     
                 />
 
@@ -224,6 +307,7 @@ class IPod extends Component{
 
                     leftButtonClicked={this.leftButtonHandler}
                     rightButtonClicked={this.rightButtonHandler}
+                    playPauseClicked={this,this.playPauseHandler}
 
                  />
             </div>

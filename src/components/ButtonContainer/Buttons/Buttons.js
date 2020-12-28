@@ -14,7 +14,7 @@ const Buttons =(props)=>{
             <TopButton menuClicked={props.menuClicked} />
             <LeftButton leftButtonClicked={props.leftButtonClicked} />
             <RightButton rightButtonClicked={props.rightButtonClicked}  />
-            <BottomButton />
+            <BottomButton playPauseClicked={props.playPauseClicked}/>
             
             
             

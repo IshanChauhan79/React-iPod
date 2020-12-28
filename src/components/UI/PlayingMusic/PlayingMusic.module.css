@@ -1,0 +1,33 @@
+.PlayingMusic{
+    text-align: center;
+    z-index: 40;
+    background-color: pink;
+    height:100%;
+    width:100%;
+    font-size:30px;
+    font-weight: 600;
+    overflow: hidden;
+    position: absolute;
+}
+.top0{
+    top:0;
+}
+.top100{
+    top:-100%;
+}
+.Title{
+    padding:20px ;
+    
+}
+.Image{
+    margin-top:20px;
+    border-radius: 10px;
+    height:120px;
+    width: auto;
+    box-shadow: 0 0 15px 7px grey;
+}
+.Audio{
+    outline:none;
+    border-radius:25px;
+    box-shadow: 0 0 15px 5px grey;
+}
