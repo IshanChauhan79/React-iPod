@@ -13,21 +13,25 @@
 }
 @keyframes backgroundColor {
 	0% {
-		background-color: white;
-	}
-	25% {
 		background-color: #ffccaa;
+	}
+	20% {
+		background-color:  #AAF683 ;
 		
 	}
-	50% {
-		background-color: #AAF683 ;
+	40% {
+		background-color:#FFD97D;
 	}
-	75% {
-		background-color: #FFD97D;
-	}
-	100% {
+	60% {
 		background-color: #00ddff;
 	}
+	80% {
+		background-color:white;
+  }
+  100%{
+    background-color: #ffccaa;
+
+  }
 	
 }
 
