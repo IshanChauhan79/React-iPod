@@ -11,7 +11,14 @@ const Music = (props) =>{
                 nowPlaying={props.nowPlaying}
                 selectedMusic={props.selectedMusic}
             />
-            <div className={classes.Controls}>controls</div>
+            <div className={classes.Controls}>
+                Use <i class="fas fa-backward"></i> or <i class="fas fa-forward"></i> to Navigate
+                
+                
+                
+
+            </div>
+
         </div>
     );
 }

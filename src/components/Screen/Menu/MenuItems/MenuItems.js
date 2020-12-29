@@ -8,8 +8,8 @@ const MenuItems = (props) => {
             <div 
                 key={i}
                 style={{
-                    'backgroundColor':props.selectedMenu===i?'blue':'white',
-                    'color':(props.music && i===4)?"red":'black' //specific color for the go back from music menu
+                    'backgroundColor':props.selectedMenu===i?'rgb(83 179 254)':'#373434',
+                    'color':(props.music && i===4)?"#f66262":'white' //specific color for the go back from music menu
                 }}
             >{value}</div>)
     }

@@ -9,8 +9,8 @@ const SongList = (props) => {
             <div 
                 key={i}
                 style={{
-                    'backgroundColor':props.selectedMusic===i?'blue':'white',
-                    'color':(props.selectedMusic===i)?"white":'black',
+                    'backgroundColor':props.selectedMusic===i?'#2c5cfa':'#1A1A1B',
+                    // 'color':(props.selectedMusic===i)?"white":'black',
                     
                 }}
             >

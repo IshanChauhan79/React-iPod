@@ -31,6 +31,7 @@ class IPod extends Component{
 
 
     componentDidMount=()=>{
+        
         var button=document.getElementById('Buttons');
         var zt =new ZingTouch.Region(button); //initialize zingtouch
         var angle=0;
@@ -195,6 +196,17 @@ class IPod extends Component{
             if(playingMusicIndex<0){
                 playingMusicIndex=5
             }
+        
+            //if song list is on the screen then change the selcted music not he playing music
+        if ( this.state.selectedMenu === 2 && this.state.openSelectedMusicMenu === 1 && !this.state.showPlaying){
+            let selectedMusic =this.state.selectedMusic;
+            selectedMusic-=1;
+            if(selectedMusic<0){
+                selectedMusic=5;
+            }
+            this.setState({selectedMusic:selectedMusic});
+            return;
+        }
 
         //if the playing music is on the screen 
         if(this.state.showPlaying){
@@ -221,16 +233,7 @@ class IPod extends Component{
             return;
         }
 
-        //if song list is on the screen then change the selcted music not he playing music
-        if ( this.state.selectedMenu === 2 && this.state.openSelectedMusicMenu === 1 && !this.state.showPlaying){
-            let selectedMusic =this.state.selectedMusic;
-            selectedMusic-=1;
-            if(selectedMusic<0){
-                selectedMusic=5;
-            }
-            this.setState({selectedMusic:selectedMusic});
-            return;
-        }
+        
     }
 
 
@@ -244,6 +247,17 @@ class IPod extends Component{
             if(playingMusicIndex>5){
                 playingMusicIndex=0
             }
+
+     //if song list is on the screen then change the selcted music not he playing music
+        if ( this.state.selectedMenu === 2 && this.state.openSelectedMusicMenu === 1 && !this.state.showPlaying){
+            let selectedMusic =this.state.selectedMusic;
+            selectedMusic+=1;
+            if(selectedMusic>5){
+                selectedMusic=0;
+            }
+            this.setState({selectedMusic:selectedMusic});
+            return;
+        }
 
 
         //if the playing music is on the screen 
@@ -273,16 +287,7 @@ class IPod extends Component{
         }
 
 
-        //if song list is on the screen then change the selcted music not he playing music
-        if ( this.state.selectedMenu === 2 && this.state.openSelectedMusicMenu === 1 && !this.state.showPlaying){
-            let selectedMusic =this.state.selectedMusic;
-            selectedMusic+=1;
-            if(selectedMusic>5){
-                selectedMusic=0;
-            }
-            this.setState({selectedMusic:selectedMusic});
-            return;
-        }
+       
         
 
 
@@ -334,7 +339,7 @@ class IPod extends Component{
                     
                 />
 
-
+            {/* button container contain the bottom part of the ipod - all the buttons */}
                 <ButtonContainer 
                     menuClicked={this.menuClickedHandler}
                     selectButtonClicked={this.selectClickedHandler}
@@ -342,6 +347,7 @@ class IPod extends Component{
                     leftButtonClicked={this.leftButtonHandler}
                     rightButtonClicked={this.rightButtonHandler}
                     playPauseClicked={this.playPauseHandler}
+                    playing={this.state.playing}
 
                  />
             </div>

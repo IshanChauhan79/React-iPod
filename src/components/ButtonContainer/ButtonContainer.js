@@ -13,6 +13,7 @@ const ButtonContainer =(props)=>{
                 leftButtonClicked={props.leftButtonClicked}
                 rightButtonClicked={props.rightButtonClicked}
                 playPauseClicked={props.playPauseClicked}
+                playing={props.playing}
             />
         </div>
     )
