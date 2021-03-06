@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/React-iPod/static/css/main.bfedc2b6.chunk.css",
+    "main.js": "/React-iPod/static/js/main.4866abff.chunk.js",
+    "main.js.map": "/React-iPod/static/js/main.4866abff.chunk.js.map",
+    "runtime-main.js": "/React-iPod/static/js/runtime-main.2e1f720e.js",
+    "runtime-main.js.map": "/React-iPod/static/js/runtime-main.2e1f720e.js.map",
+    "static/js/2.512aef73.chunk.js": "/React-iPod/static/js/2.512aef73.chunk.js",
+    "static/js/2.512aef73.chunk.js.map": "/React-iPod/static/js/2.512aef73.chunk.js.map",
+    "static/js/3.1fc59127.chunk.js": "/React-iPod/static/js/3.1fc59127.chunk.js",
+    "static/js/3.1fc59127.chunk.js.map": "/React-iPod/static/js/3.1fc59127.chunk.js.map",
+    "index.html": "/React-iPod/index.html",
+    "static/css/main.bfedc2b6.chunk.css.map": "/React-iPod/static/css/main.bfedc2b6.chunk.css.map",
+    "static/js/2.512aef73.chunk.js.LICENSE.txt": "/React-iPod/static/js/2.512aef73.chunk.js.LICENSE.txt",
+    "static/media/Daisy.f44e0254.m4a": "/React-iPod/static/media/Daisy.f44e0254.m4a",
+    "static/media/Kataomoi.a9d91be9.m4a": "/React-iPod/static/media/Kataomoi.a9d91be9.m4a",
+    "static/media/Naruto16.c1c6c50b.m4a": "/React-iPod/static/media/Naruto16.c1c6c50b.m4a",
+    "static/media/Naruto17.5ad87ce5.m4a": "/React-iPod/static/media/Naruto17.5ad87ce5.m4a",
+    "static/media/SugarSong.e9947068.m4a": "/React-iPod/static/media/SugarSong.e9947068.m4a",
+    "static/media/UddGaye.4a7a9ded.m4a": "/React-iPod/static/media/UddGaye.4a7a9ded.m4a",
+    "static/media/daisy.79352c0b.jpg": "/React-iPod/static/media/daisy.79352c0b.jpg",
+    "static/media/gallary.476e1c80.jpg": "/React-iPod/static/media/gallary.476e1c80.jpg",
+    "static/media/games.3b07b760.jpg": "/React-iPod/static/media/games.3b07b760.jpg",
+    "static/media/home.157ff215.jpg": "/React-iPod/static/media/home.157ff215.jpg",
+    "static/media/ipod_cover.66e28056.jpg": "/React-iPod/static/media/ipod_cover.66e28056.jpg",
+    "static/media/kaori_bg.c742b1ea.png": "/React-iPod/static/media/kaori_bg.c742b1ea.png",
+    "static/media/kataomoi.3745b26f.jpg": "/React-iPod/static/media/kataomoi.3745b26f.jpg",
+    "static/media/naruto16.83281d53.jpg": "/React-iPod/static/media/naruto16.83281d53.jpg",
+    "static/media/naruto17.902a091d.jpg": "/React-iPod/static/media/naruto17.902a091d.jpg",
+    "static/media/setting.9d2d65de.png": "/React-iPod/static/media/setting.9d2d65de.png",
+    "static/media/sugarSong.3e70e8f0.jpg": "/React-iPod/static/media/sugarSong.3e70e8f0.jpg",
+    "static/media/uddGaye.3dbedd90.jpg": "/React-iPod/static/media/uddGaye.3dbedd90.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2e1f720e.js",
+    "static/js/2.512aef73.chunk.js",
+    "static/css/main.bfedc2b6.chunk.css",
+    "static/js/main.4866abff.chunk.js"
+  ]
+}
