@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/React-iPod/static/css/main.bfedc2b6.chunk.css",
+    "main.css": "/React-iPod/static/css/main.a7ad160c.chunk.css",
     "main.js": "/React-iPod/static/js/main.4866abff.chunk.js",
     "main.js.map": "/React-iPod/static/js/main.4866abff.chunk.js.map",
     "runtime-main.js": "/React-iPod/static/js/runtime-main.2e1f720e.js",
@@ -10,7 +10,7 @@
     "static/js/3.1fc59127.chunk.js": "/React-iPod/static/js/3.1fc59127.chunk.js",
     "static/js/3.1fc59127.chunk.js.map": "/React-iPod/static/js/3.1fc59127.chunk.js.map",
     "index.html": "/React-iPod/index.html",
-    "static/css/main.bfedc2b6.chunk.css.map": "/React-iPod/static/css/main.bfedc2b6.chunk.css.map",
+    "static/css/main.a7ad160c.chunk.css.map": "/React-iPod/static/css/main.a7ad160c.chunk.css.map",
     "static/js/2.512aef73.chunk.js.LICENSE.txt": "/React-iPod/static/js/2.512aef73.chunk.js.LICENSE.txt",
     "static/media/Daisy.f44e0254.m4a": "/React-iPod/static/media/Daisy.f44e0254.m4a",
     "static/media/Kataomoi.a9d91be9.m4a": "/React-iPod/static/media/Kataomoi.a9d91be9.m4a",
@@ -34,7 +34,7 @@
   "entrypoints": [
     "static/js/runtime-main.2e1f720e.js",
     "static/js/2.512aef73.chunk.js",
-    "static/css/main.bfedc2b6.chunk.css",
+    "static/css/main.a7ad160c.chunk.css",
     "static/js/main.4866abff.chunk.js"
   ]
 }
